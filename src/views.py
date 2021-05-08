@@ -1,4 +1,4 @@
-from flask import jsonify
+from flask import jsonify, render_template
 
 
 def configure(app):
@@ -20,3 +20,23 @@ def configure(app):
     @app.route('/api')
     def api_demo():
         return jsonify(data={'Key': 'Value'})
+
+
+    @app.route('/langs')
+    def langs():
+        languages = [
+            'Python',
+            'Java',
+            'C',
+            'C++',
+            'JavaScript',
+            'R',
+            'Arduino',
+            'Go',
+            'Swift',
+            'Matlab']
+        return render_template(
+            'index.html',
+            title = 'Melhores Linguagens de Programação de 2020',
+            languages = languages
+        )
