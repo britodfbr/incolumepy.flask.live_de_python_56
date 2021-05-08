@@ -2,7 +2,7 @@
 ---
 ## Desenvolvimento web com Python e Flask
 
-### Bruno Rocha
+### Bruno Rocha / Eduardo Mendes
 
 ---
 
