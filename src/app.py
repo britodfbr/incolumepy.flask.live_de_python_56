@@ -1,21 +1,10 @@
-from flask import Flask, jsonify
-
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return('''
-    <h1>Live de Python #56</h1>
-    <br />
-    <p>Desenvolvimento web com Python e Flask</p>
-    <p>Bruno Rocha</p>
-    ''')
-
-@app.route('/hello')
-def hello():
-    return "Hello live Python"
+from flask import Flask
+from src import views
 
 
-@app.route('/api')
-def api_demo():
-    return jsonify(data={'Key': 'Value'})
+def create_app():
+    app = Flask(__name__)
+    views.configure(app)
+    # configurar extensões
+    # configurar variáveis
+    return app
