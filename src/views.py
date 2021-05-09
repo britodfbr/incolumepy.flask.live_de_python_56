@@ -1,5 +1,5 @@
 from flask import jsonify, render_template, url_for
-
+from io import StringIO
 
 def configure(app):
 
@@ -10,12 +10,7 @@ def configure(app):
 
     @app.route('/home')
     def home():
-        return('''
-        <h1>Live de Python #56</h1>
-        <br />
-        <p>Desenvolvimento web com Python e Flask</p>
-        <p>Bruno Rocha</p>
-        ''')
+        return  render_template('apresentation.html', title='Apresentação')
 
 
     @app.route('/hello')
