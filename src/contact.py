@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, abort
 
 
 bp = Blueprint('contact', __name__, url_prefix='/contact')
@@ -14,6 +14,10 @@ def contact():
         )
     # TODO processar dados
     print(request.form)
+    name = request.form.get('name')
+    message = request.form.get('message')
+    if not name or not message:
+        abort(400, 'Mensagem inválida!')
     return "Tua mensagem foi enviada com sucesso!"
 
 def configure(app):
