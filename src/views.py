@@ -1,8 +1,14 @@
-from flask import jsonify, render_template
+from flask import jsonify, render_template, url_for
 
 
 def configure(app):
+
     @app.route('/')
+    def index():
+        return render_template('index.html', title='Home')
+
+
+    @app.route('/home')
     def home():
         return('''
         <h1>Live de Python #56</h1>
@@ -36,7 +42,14 @@ def configure(app):
             'Swift',
             'Matlab']
         return render_template(
-            'index.html',
+            'langs.html',
             title = 'Melhores Linguagens de Programação de 2020',
             languages = languages
         )
+    @app.route('/contact')
+    def contact():
+        return "Contato"
+    #     # return render_template(
+    #     #     'contact.html',
+    #     #      title='Contato'
+    #     # )
