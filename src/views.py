@@ -12,10 +12,10 @@ def configure(app):
     def home():
         return  render_template('apresentation.html', title='Apresentação')
 
-
     @app.route('/hello')
-    def hello():
-        return "Hello live Python"
+    @app.route('/hello/<name>')
+    def hello(name=None):
+        return render_template('hello.html', name=name)
 
 
     @app.route('/api')
