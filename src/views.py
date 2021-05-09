@@ -46,10 +46,3 @@ def configure(app):
             title = 'Melhores Linguagens de Programação de 2020',
             languages = languages
         )
-    @app.route('/contact')
-    def contact():
-        return "Contato"
-    #     # return render_template(
-    #     #     'contact.html',
-    #     #      title='Contato'
-    #     # )
