@@ -3,7 +3,7 @@ from tinymongo import TinyMongoClient
 
 def get_db():
     conn = TinyMongoClient()
-    db = conn.my_database
+    db = conn.mydatabase
     return db
 
 
